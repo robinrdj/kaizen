@@ -1,0 +1,39 @@
+.info-banner {
+  background-color: #f4e9df;
+  border-radius: 20px;
+  padding: 24px 28px;
+  /* max-width: 100%; */
+  min-width: 360px;
+   width: 360px;
+   max-width: 360px;
+  /* margin: 30px auto; */
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  /* width: 100%; */
+}
+
+.info-banner h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #30124d;
+}
+
+.info-banner h2 span {
+  color: #5c2d91;
+}
+
+.info-banner p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.info-banner ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.info-banner li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}

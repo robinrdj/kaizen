@@ -1,0 +1,43 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 8px;
+  max-width: 1200px;
+  padding: 2% 20px;
+  box-sizing: border-box;
+}
+
+.App-left,
+.App-right {
+  flex: 1;
+  max-width: 48%;
+  border: 1px solid gray;
+  box-sizing: border-box;
+}
+
+.App-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .App {
+    flex-direction: column;
+    gap: 20px;
+    padding: 2% 5%;
+  }
+
+  .App-left,
+  .App-right {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Centers them horizontally */
+  }
+
+  .App-left {
+    flex-direction: column-reverse;
+  }
+}
