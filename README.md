@@ -1,16 +1,19 @@
 Setup Instructions
 
 1.Clone the repo
+
 git clone https://github.com/robinrdj/kaizen.git
 
-2.Change the directory
+2.Change the directory 
+
 cd kaizen
 
-3.Install the packages
+3.Install the packages 
+
 npm install
 
-4.start the server
+4.start the server 
+
 npm start
 
-Dependencies:
-React icons used
+Dependencies: React icons used  
