@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import "./Badge.css";
 
 function Badge() {
   return (
     <div className="badge-wrapper">
+      {/* SVG badge with gradient and curved text */}
       <svg viewBox="0 0 200 200" className="badge-circle">
         <defs>
           {/* Gradient for the fill */}
@@ -12,7 +13,7 @@ function Badge() {
             <stop offset="100%" stopColor="#1b3065" />
           </radialGradient>
 
-          {/* Right half path, smaller radius to move inside */}
+          {/* Path for the curved text on the right half */}
           <path
             id="innerRightHalf"
             d="
@@ -21,10 +22,10 @@ function Badge() {
             "
           />
         </defs>
-
+        {/* Main circle with gradient fill */}
         <circle cx="100" cy="100" r="90" fill="url(#grad1)" />
-
-        <text fill="white" fontSize="18" fontWeight="bold">
+        {/* Curved text showing slot info */}
+        <text fill="#f4e9df" fontSize="18" fontWeight="bold">
           <textPath
             href="#innerRightHalf"
             startOffset="50%"
@@ -35,7 +36,7 @@ function Badge() {
         </text>
       </svg>
     </div>
-  )
+  );
 }
 
-export default Badge
+export default Badge;

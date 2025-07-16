@@ -1,40 +1,46 @@
-import React, { useState } from 'react';
-import './ClaimForm.css';
+import React, { useState } from "react";
+import "./ClaimForm.css";
 
+// Main claim form component
 const ClaimForm = () => {
+  // State for all form fields
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    phoneNumber: '',
-    emailId: '',
-    dateOfBirth: '',
-    jobTitle: '',
-    dateOfDiagnosis: '',
-    typeOfDiagnosis: '',
-    story: '',
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    emailId: "",
+    dateOfBirth: "",
+    jobTitle: "",
+    dateOfDiagnosis: "",
+    typeOfDiagnosis: "",
+    story: "",
     agreeToPolicy: false,
-    verifyPerson: false
+    verifyPerson: false,
   });
 
+  // Handles changes for both text and checkbox inputs
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
+  // Handles form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   return (
     <div className="claim-form-container">
       <div className="claim-form">
         <h1 className="form-title">Claim Form</h1>
-        
+
+        {/* Form starts here */}
         <form onSubmit={handleSubmit}>
+          {/* First and last name fields */}
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="firstName">First Name *</label>
@@ -60,6 +66,7 @@ const ClaimForm = () => {
             </div>
           </div>
 
+          {/* Phone and email fields */}
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="phoneNumber">Phone Number *</label>
@@ -85,6 +92,7 @@ const ClaimForm = () => {
             </div>
           </div>
 
+          {/* Date of birth and job title fields */}
           <div className="form-row">
             <div className="form-group date-form-group">
               <label htmlFor="dateOfBirth">Date of birth *</label>
@@ -95,7 +103,7 @@ const ClaimForm = () => {
                 value={formData.dateOfBirth}
                 onChange={handleChange}
                 required
-                  className='date-form-input'
+                className="date-form-input"
               />
             </div>
             <div className="form-group">
@@ -111,8 +119,9 @@ const ClaimForm = () => {
             </div>
           </div>
 
+          {/* Diagnosis date and type fields */}
           <div className="form-row">
-            <div className="form-group date-form-group" >
+            <div className="form-group date-form-group">
               <label htmlFor="dateOfDiagnosis">Date of Diagnosis *</label>
               <input
                 type="date"
@@ -121,7 +130,7 @@ const ClaimForm = () => {
                 value={formData.dateOfDiagnosis}
                 onChange={handleChange}
                 required
-                className='date-form-input'
+                className="date-form-input"
               />
             </div>
             <div className="form-group">
@@ -142,6 +151,7 @@ const ClaimForm = () => {
             </div>
           </div>
 
+          {/* Optional story field */}
           <div className="form-group full-width">
             <label htmlFor="story">Tell us your story (optional)</label>
             <input
@@ -153,6 +163,7 @@ const ClaimForm = () => {
             />
           </div>
 
+          {/* Consent checkbox for privacy policy and disclaimer */}
           <div className="checkbox-group checkbox-group-top">
             <input
               type="checkbox"
@@ -163,10 +174,16 @@ const ClaimForm = () => {
               required
             />
             <label htmlFor="agreeToPolicy" className="checkbox-label">
-              I agree to the <span className="link">privacy policy</span> and <span className="link">disclaimer</span> and give my express written consent to be contacted regarding my case options. I understand that I may be contacted using automated dialing equipment. Message and data rates may apply. My consent does not require purchase. This is Legal advertising.
+              I agree to the <span className="link">privacy policy</span> and{" "}
+              <span className="link">disclaimer</span> and give my express
+              written consent to be contacted regarding my case options. I
+              understand that I may be contacted using automated dialing
+              equipment. Message and data rates may apply. My consent does not
+              require purchase. This is Legal advertising.
             </label>
           </div>
 
+          {/* Checkbox to verify user is a person */}
           <div className="checkbox-group">
             <input
               type="checkbox"
@@ -181,6 +198,7 @@ const ClaimForm = () => {
             </label>
           </div>
 
+          {/* Submit button for the form */}
           <button type="submit" className="submit-btn">
             Start your claim now
           </button>

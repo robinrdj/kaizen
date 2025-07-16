@@ -1,9 +1,18 @@
+/*
+  App.css controls the main layout for the app.
+  It uses flexbox for a two-column layout on desktop,
+  with left and right sections side by side.
+  The left section stacks its children vertically.
+  On screens smaller than 900px, the layout switches to a single column,
+  and the left section reverses its child order for better mobile experience.
+  Borders, spacing, and max-widths help keep the design clean and readable.
+*/
 .App {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
-  gap: 8px;
+  gap: 20px;
   max-width: 1200px;
   padding: 2% 20px;
   box-sizing: border-box;
@@ -13,16 +22,16 @@
 .App-right {
   flex: 1;
   max-width: 48%;
-  border: 1px solid gray;
   box-sizing: border-box;
 }
 
 .App-left {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
 }
 
+/* Responsive design for mobile screens */
 @media screen and (max-width: 900px) {
   .App {
     flex-direction: column;
