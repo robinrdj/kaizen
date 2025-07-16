@@ -44,9 +44,24 @@ const ClaimForm = () => {
   // Handles form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert("The form is successfully submitted");
     console.log("Form submitted:", formData);
-  };
 
+    // Reset form
+    setFormData({
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      emailId: "",
+      dateOfBirth: "",
+      jobTitle: "",
+      dateOfDiagnosis: "",
+      typeOfDiagnosis: "",
+      story: "",
+      agreeToPolicy: false,
+      verifyPerson: false,
+    });
+  };
   return (
     <div className="claim-form-container">
       <div className="claim-form">
@@ -217,7 +232,7 @@ const ClaimForm = () => {
           <button type="submit" className="submit-btn">
             {isMobile ? (
               <div>
-                Submit <span>   </span> 
+                Submit <span> </span>
                 <FaArrowRight />
               </div>
             ) : (
