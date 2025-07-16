@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { FaArrowRight } from "react-icons/fa";
 import "./ClaimForm.css";
 
 // Main claim form component
@@ -17,6 +18,19 @@ const ClaimForm = () => {
     agreeToPolicy: false,
     verifyPerson: false,
   });
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 900;
+      setIsMobile(mobile);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Handles changes for both text and checkbox inputs
   const handleChange = (e) => {
@@ -199,8 +213,16 @@ const ClaimForm = () => {
           </div>
 
           {/* Submit button for the form */}
+
           <button type="submit" className="submit-btn">
-            Start your claim now
+            {isMobile ? (
+              <div>
+                Submit <span>   </span> 
+                <FaArrowRight />
+              </div>
+            ) : (
+              "Start your claim now"
+            )}
           </button>
         </form>
       </div>
