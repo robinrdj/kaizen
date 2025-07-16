@@ -21,6 +21,11 @@ npm start
 Dependencies: React icons used  
 
 <br>
-Deployment Link:
 
+Vercel Deployment Link:
 https://kaizen-sigma-nine.vercel.app/
+
+<br>
+
+Netlify Deployment Link:
+https://kaizenrobin.netlify.app/
