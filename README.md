@@ -16,4 +16,11 @@ npm install
 
 npm start
 
+<br>
+
 Dependencies: React icons used  
+
+<br>
+Deployment Link:
+
+https://kaizen-sigma-nine.vercel.app/
